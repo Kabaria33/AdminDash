@@ -1,58 +1,16 @@
 <?php
-$server="localhost";
-$username="root";
-$password="";
-$database="zalego";
-$connect=mysqli_connect($server,$username,$password,$database);
-$sql=mysqli_query($connect,"SELECT * FROM enrollment");
+require_once('logics/dbconnection.php');
+$sql=mysqli_query($connection,"SELECT * FROM enrollment");
 ?>
 
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Students Records</title>
-    <meta charset="UTF-8">
-    <meta name="description" content="Creating admin dashboard">
-    <meta name="keywords" content="HTML,CSS,Zalego,Technology">
-    <meta name="author" content="Virginia Kabaria">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="bootstrap-5.2.0/bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-
-</head>
+<?php require_once('includes/headers.php')?>
 <body>
-    <div class="header" style="width=100%!important">
-        <img src="images/zalego.jfif" alt="zalego" height="50" width="50" class="rounded-circle">
-        <a href="#" class="navbar-trigger"><span></span></a>
-    </div>
+    <?php require_once('includes/navbar.php') ?>
     <div class="sidebar">
-        <nav>
-           <ul>
-            <li>
-                <a href="students.php">
-                   <span><i class="fa fa-group"></i></span> 
-                   <span>Students</span>
-                </a>
-            
-            </li>
-            <li>
-                <a href="index.php">
-                   <span><i class="fa fa-folder-open"></i></span> 
-                   <span>Courses</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                   <span><i class="fa fa-graduation-cap"></i></span> 
-                   <span>Campus</span>
-                </a>
-            </li>
-           </ul>             
-        </nav>
-
+        <?php require_once('includes/sidebar.php')?>
     </div>
     <div class="main-content">
         <div class="container-fluid">

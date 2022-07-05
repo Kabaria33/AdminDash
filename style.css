@@ -11,7 +11,7 @@ body{
     position: absolute;
     background-color:orangered;
     height: 50px;
-    width: 100%;
+    width: 100vh;
     z-index: 5;
 }
 .sidebar{
