@@ -45,7 +45,7 @@ $sql=mysqli_query($connection,"SELECT * FROM enrollment");
                                         <td><?php echo $fetchEnrollmentRecord['email']?></td>
                                         <td><?php echo $fetchEnrollmentRecord['created_at']?></td>
                                         <td>
-                                            <a href="#" class="btn btn-primary btn-sm"><span><i class="fa fa-edit"></i></span></a>
+                                            <a href="edit-enrollment.php?id=<?php echo $fetchEnrollmentRecord['no'] ?>" class="btn btn-primary btn-sm"><span><i class="fa fa-edit"></i></span></a>
                                             <a href="#" class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a>
                                             <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
                                         </td>
@@ -56,7 +56,6 @@ $sql=mysqli_query($connection,"SELECT * FROM enrollment");
                             </tbody>
                         </table> 
                     </div>
-                    <div class="card-footer"></div>
                 </div>
                 
             </div>
@@ -69,7 +68,6 @@ $sql=mysqli_query($connection,"SELECT * FROM enrollment");
 
 
 
-    <script src="bootstrap-5.2.0/bootstrap-5.2.0-beta1-dist/js/bootstrap.min.js"></script>
-    <script src="bootstrap-5.2.0/bootstrap-5.2.0-beta1-dist/js/bootstrap.bundle.js"></script>
+    <?php require_once('includes/scripts.php')?>
 </body>
 </html>
