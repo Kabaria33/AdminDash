@@ -1,3 +1,17 @@
+<?php 
+require_once('logics/dbconnection.php');
+// counting number of students
+
+$queryEnrolledStudents=mysqli_query($connection,"SELECT * FROM enrollment ");
+$countAllStudents =mysqli_num_rows($queryEnrolledStudents);
+// count by gender 
+$queryEnrolledFemale=mysqli_query ($connection, "SELECT * FROM enrollment WHERE gender='Female'");
+$countAllFemale=mysqli_num_rows($queryEnrolledFemale)
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <?php require_once('includes/headers.php') ?>
@@ -23,9 +37,10 @@
                         </div>
                         <div class="card-body">
                             <span><i class="fa fa-group fa-3x"></i></span>
-                            <span class="float-end">00</span>
+                            <span class="float-end badge bg-dark rounded-pill"><?php echo $countAllStudents ?> </span><br>
+                            <span class="float-end"> Female:</span><br>
+                            <span class="float-end badge bg-dark rounded-pill"><?php echo $countAllFemale ?> </span>
                         </div>
-                        <div class="card-footer"></div>
                     </div>
                 </div>
                 <div class="col-lg-3">
@@ -37,7 +52,6 @@
                             <span><i class="fa fa-folder-open fa-3x"></i></span>
                             <span class="float-end">00</span>
                         </div>
-                        <div class="card-footer"></div>
                     </div>
                 </div>
                 <div class="col-lg-3">
@@ -49,7 +63,6 @@
                             <span><i class="fa fa-graduation-cap fa-3x"></i></span>
                             <span class="float-end">00</span>
                         </div>
-                        <div class="card-footer"></div>
                     </div>
                 </div>
                 <div class="col-lg-3">
@@ -61,7 +74,6 @@
                             <span><i class="fa fa-user fa-3x"></i></span>
                             <span class="float-end">00</span>  
                         </div>
-                        <div class="card-footer"></div>
                     </div>
                 </div>
                 <div class="col-lg-12">
