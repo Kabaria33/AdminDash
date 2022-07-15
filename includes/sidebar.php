@@ -14,6 +14,13 @@
     
     </li>
     <li>
+        <a href="contactus.php">
+           <span><i class="fa fa-envelope"></i></span> 
+           <span>Messages</span>
+        </a>
+    </li>
+    
+    <li>
         <a href="">
            <span><i class="fa fa-folder-open"></i></span> 
            <span>Courses</span>
@@ -25,6 +32,7 @@
            <span>Campus</span>
         </a>
     </li>
+    
    
    </ul>             
 </nav>
