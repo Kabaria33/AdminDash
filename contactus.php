@@ -35,7 +35,7 @@ $getData=mysqli_query($connection,"SELECT * FROM contactus");
                         <span>Contact Us</span>
                     </div>
                     <div class="card-body">
-                      <table class="table  table-bordered table-hover table-responsive " style="font-size:12px;">
+                      <table class="table  table-bordered table-hover table-responsive " style="font-size:13px;">
                             <thead>
                                 <tr>
                                     <th>No.</th>
@@ -45,6 +45,7 @@ $getData=mysqli_query($connection,"SELECT * FROM contactus");
                                     <th>Phone Number</th>
                                     <th>Message</th>
                                     <th>Sent On</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -57,7 +58,11 @@ $getData=mysqli_query($connection,"SELECT * FROM contactus");
                                         <td><?php echo $Data['phonenumber']?></td>
                                         <td><?php echo $Data['message']?></td>
                                         <td><?php echo $Data['created_at']?></td>
-                                        
+                                        <td>
+                                            <a href="edit-contactus.php?id=<?php echo $Data['no'] ?>"><span class="btn btn-primary btn-sm"><i class="fa fa-pencil "></span></i></a>
+                                            <a href="view-contactus.php?id=<?php echo $Data['no'] ?>"><span class="btn btn-light btn-sm"><i class= "fa fa-eye"></i></span></a>
+                                            <a href="delete-contactus.php?id=<?php echo $Data['no'] ?>"><span class="btn btn-danger btn-sm"><i class="fa fa-trash"></span></i></a>
+                                        </td>
                                     </tr>
                                 <?php }?>
                             
