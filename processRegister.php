@@ -6,6 +6,8 @@
       $email=$_POST['email'];
       $password=$_POST['password']; 
       $cpass=$_POST['cpassword']; 
+    //   to encrypt the password
+      $passHash=md5($password); 
     //   checking if username exists
         $sqlUsername=mysqli_query($connection,"SELECT * FROM account WHERE username='$username'");
         $checking=mysqli_num_rows($sqlUsername);
@@ -25,7 +27,7 @@
         }
         else
         {
-            $sql=mysqli_query($connection,"INSERT INTO account(username,email,password)VALUES('$username','$email','$password')");
+            $sql=mysqli_query($connection,"INSERT INTO account(username,email,password)VALUES('$username','$email','$passHash')");
             // submitting data
             if($sql)
             {
