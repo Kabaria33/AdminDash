@@ -33,7 +33,7 @@ if(isset($_POST["add"]))
 <body>
 
     <div class="main-content container-fluid">
-        <div class="modal fade " id="modal">
+        <div class="modal fade " id="modal" data-bs-backdrop="static" data-bs-keyboard="false">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
